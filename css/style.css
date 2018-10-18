@@ -1,0 +1,324 @@
+/**************************************************/
+/**** Basic setup ****/
+/**************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Mitr', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color:white;
+    background-color: #000000;
+    background-image: url("../img/dark-leather.png");
+}
+
+/**************************************************/
+/**** Components ****/
+/**************************************************/
+
+header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+hr {
+    width: 7.5rem;
+    height: 1px;
+    background-color: #AC00E6;
+    border: none;
+    margin: 1rem auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color:rgba(172, 0, 230, .5);
+}
+
+a:hover,
+a:active {
+    margin-left: 3px;
+}
+
+footer {
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    opacity: 0;
+    width: 118rem;
+    padding: 2rem 0;
+    text-align: center;
+    margin: auto;
+    height: auto;
+    background-color: #000000;
+    color: #ffffff;
+
+
+}
+
+
+/**************************************************/
+/**** Sections ****/
+/**************************************************/
+
+.page-container {
+    max-width: 120rem;
+    height: auto;
+    margin: 0 auto;
+ 
+}
+
+section {
+    margin: 1rem;
+}
+
+.adventure-log {
+    opacity: 0;
+}
+
+.enemy-combat {
+    display: none;
+    border: 1px solid #ffffff;
+}
+
+/**************************************************/
+/**** Interface ****/
+/**************************************************/
+
+.interface {
+    background-color:rgba(172, 0, 230, .09);
+}
+
+.interface h3 {
+    padding-bottom: 1rem;
+}
+
+.character-select {
+    display:flex; 
+    justify-content: center;
+    align-items: space-between;
+}
+
+.combat-log-player,
+.combat-log-enemy {
+    background-color: rgba(217,217,217,.28);
+    color: #ffffff;
+    padding: 1rem;
+}
+
+.combat-log-player,
+.combat-log-enemy,
+.enemy {
+    width: 33.33%;
+    margin: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.warrior, 
+.mage,
+.rogue {
+    width: 33%;
+    text-align: left;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.warrior img,
+.mage img,
+.rogue img {
+    width: 15rem;
+    padding: 2rem;
+    display: block;
+    margin: auto;
+    opacity: .8;
+    border-radius: 3rem;
+}
+
+.warrior img:hover,
+.mage img:hover,
+.rogue img:hover {
+    opacity: 1;	
+    -webkit-transform: scale(1.05);	
+    -ms-transform: scale(1.05);	
+    transform: scale(1.05);
+} 
+
+.character-info {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+}
+
+.adventure-log {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+    border: 1px solid #595959;
+    height:10rem;
+}
+
+.encounter-btn {
+    width: 5rem;
+}
+
+.encounter-btn,
+.encounter-btn-continue {
+    background: none;
+    color: #ffffff;
+    margin: 1rem 1rem;
+    padding: .5rem;
+}
+
+.encounter-btn:link,
+.encounter-btn:visited,
+.encounter-btn-continue:link,
+.encounter-btn-continue:visited {
+    color:rgba(172, 0, 230, .5);   
+}
+
+.encounter-btn:active,
+.encounter-btn:focus,
+.encounter-btn-continue:active,
+.encounter-btn-continue:focus {
+    color:rgba(172, 0, 230, .5); 
+}
+
+.encounter-btn-continue {
+        width: 10rem;
+}
+
+.enemy-hit-points {
+    text-align: center;
+}
+
+.img-enemy-avatar {
+    width:15rem;
+    margin: auto;
+    padding: 3rem;
+    border-radius: 4rem;
+}
+
+.defeated-enemy {
+    color: #660000;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.combatLogMessage {
+    list-style: none;
+}
+
+/**************************************************/
+/**** Rotating Avatar ****/
+/**************************************************/
+
+.full-avatar {
+    width:15rem;
+    height:30.3rem;
+    margin: 0 auto;
+    position: relative;
+    -moz-perspective: 150rem;
+    -webkit-perspective: 150rem;
+            perspective: 150rem;
+
+}
+
+.full-avatar-sides {
+    width:15rem;
+    height:30.3rem;
+    width:100%;
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.full-avatar-front {
+    background-color: #C9BEBA;
+    background-size: 15rem 30.3rem;
+}
+
+.full-avatar-back {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-color: #000000;
+    position: relative;
+}
+
+.full-avatar-back-stats {
+    font-size: 1.2rem;
+    margin: 0;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 3rem;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+.img-avatar {
+    max-width:15rem;
+    border-radius: 1rem; 
+}
+
+.full-avatar:hover .full-avatar-front {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+}
+
+.full-avatar:hover .full-avatar-back {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+}
+

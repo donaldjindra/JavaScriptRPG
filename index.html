@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JavaScript RPG Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Mitr:400,600" rel="stylesheet">
+        <script src="js/game.js" async defer></script>
+        <script src="js/player.js" async defer></script>
+        <script src="js/enemy.js" async defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Donald's JavaScript RPG</h1>
+            <h2 class="select">Please select a character to play the game!</h2>
+        </header>
+        <div class="page-container">
+
+            <section class="interface">
+
+                <div class="character-select">                    
+                        <div class="warrior">
+                            <h3>The Warrior</h3>
+                            <a href="#" onclick="RunGame.initGame('Warrior')">
+                                <img src="img/warrior.jpg" alt="Warrior">
+                            </a>
+                            <hr>
+                            <p>The warrior is ready to fight with sword and shield in hand.   The warrior has the best armor, and the highest hit points.  However he has the lowest attack damage output.</p>
+                        </div><!-- warrior -->
+        
+                        <div class="mage">
+                            <h3>The Mage</h3>
+                            <a href="#" onclick="RunGame.initGame('Mage')">
+                                <img src="img/mage.jpg" id="mage" alt="Mage">
+                            </a>
+                            <hr>
+                            <p>The mage is a master of magic and spell casting.  The mage has the worst armor, and the lowest hit points.  But she has the highest attack damage output.</p>
+                        </div><!-- mage -->
+        
+                        <div class="rogue">
+                            <h3>The Rogue</h3>
+                            <a href="#" onclick="RunGame.initGame('Rogue')">
+                                <img src="img/rogue.jpg" alt="Rogue">
+                            </a>
+                            <hr>
+                            <p>The rogue is an assassin hiding in the shadows ready to strike.  While the rogue doesn't have the highest hit points, or armor, he has a high attack damage output.</p>
+                        </div><!-- rogue -->
+            
+                </div><!-- character-select -->
+
+            </section><!-- interface -->
+
+            <section class="alert">
+                <div class="alert-box">
+
+                </div>
+            </section><!-- alert -->
+            
+            <section class="adventure-log">
+                <div class="adventure-log-box">
+                    
+                </div>
+
+            </section><!-- adventure-log -->
+
+            <section class="enemy-combat">
+
+                <div class="combat-log-player">
+        
+                </div><!-- combat-log-left -->
+
+                <div class="enemy">
+
+                </div><!-- enemy -->
+
+                <div class="combat-log-enemy">
+        
+                </div><!-- combat-log-right -->
+
+            </section><!-- enemy-combat -->
+
+            <footer>&copy;Donald Jindra 2018</footer>
+        </div><!-- page-container -->
+
+    </body>
+</html>
