@@ -384,14 +384,6 @@ let RunGame = {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Trying to clear the combat-logs for both player and enemy.
 
-    clearLog: function(){
-        const combatPlayerLog = document.querySelector(".combat-log-player");
-        clearLog = "";
-        combatPlayerLog.innerHTML = clearLog;
-        const combatEnemyLog = document.querySelector(".combat-log-enemy");
-        clearLog = "";
-    },
 } 
 

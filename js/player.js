@@ -115,3 +115,12 @@ function playerDefeat() {
         combatPlayerLog.style.transition = "opacity .5s linear";
     }, 1000)
 }
+
+// Trying to clear the combat-logs for both player and enemy.
+    function clearLog() {
+        playerCombatMsg = playerCombatMsg + ""
+        combatPlayerLog = document.querySelector(".combat-log-player");
+        combatPlayerLog.innerHTML = playerCombatMsg;
+        // combatEnemyLog = document.querySelector(".combat-log-enemy");
+        // combatEnemyLog.innerHTML = "";
+}
