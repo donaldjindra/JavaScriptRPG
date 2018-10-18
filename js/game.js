@@ -156,7 +156,7 @@ let RunGame = {
     encounterEnemyAttacksFirst: function() {
 
         RunGame.createEnemy();
-        RunGame.clearLog();
+        clearLog();
 
         getAdventures = document.querySelector(".adventure-log");
         getAdventures.style.opacity = "1";
@@ -206,7 +206,7 @@ let RunGame = {
         getCombatLog.style.display="flex";
 
         RunGame.createEnemy();
-        RunGame.clearLog();
+        clearLog();
 
         let getEnemy = document.querySelector(".enemy");
         getEnemy.style.display="flex";
@@ -383,7 +383,6 @@ let RunGame = {
     },
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 } 
 

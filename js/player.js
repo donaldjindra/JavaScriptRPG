@@ -118,8 +118,7 @@ function playerDefeat() {
 
 // Trying to clear the combat-logs for both player and enemy.
     function clearLog() {
-        playerCombatMsg = playerCombatMsg + ""
-        combatPlayerLog = document.querySelector(".combat-log-player");
+        playerCombatMsg = ""
         combatPlayerLog.innerHTML = playerCombatMsg;
         // combatEnemyLog = document.querySelector(".combat-log-enemy");
         // combatEnemyLog.innerHTML = "";
