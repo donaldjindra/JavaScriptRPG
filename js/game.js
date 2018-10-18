@@ -156,7 +156,7 @@ let RunGame = {
     encounterEnemyAttacksFirst: function() {
 
         RunGame.createEnemy();
-        clearLog();
+        RunGame.clearLog();
 
         getAdventures = document.querySelector(".adventure-log");
         getAdventures.style.opacity = "1";
@@ -206,7 +206,7 @@ let RunGame = {
         getCombatLog.style.display="flex";
 
         RunGame.createEnemy();
-        clearLog();
+        RunGame.clearLog();
 
         let getEnemy = document.querySelector(".enemy");
         getEnemy.style.display="flex";
@@ -333,6 +333,7 @@ let RunGame = {
         combatPlayerLog.style.opacity = "0";
         combatPlayerLog.style.transition = "opacity .5s linear";
         setTimeout(function () {
+            playerCombatMsg = "";
             combatPlayerLog.innerHTML = "";
             combatPlayerLog.style.opacity = "1";
             combatPlayerLog.style.transition = "opacity .5s linear";
@@ -384,5 +385,12 @@ let RunGame = {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // Clear the combat-logs for the player and enemy before each encounter.
+    clearLog: function () {
+        playerCombatMsg = "";
+        combatPlayerLog.innerHTML = "";
+        enemyCombatMsg = "";
+        combatEnemyLog.innerHTML = "";
+    },
 } 
 

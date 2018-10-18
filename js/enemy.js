@@ -59,6 +59,7 @@ function enemyDefeat() {
     combatEnemyLog.style.opacity = "0";
     combatEnemyLog.style.transition = "opacity .5s linear";
     setTimeout(function(){
+        enemyCombatMsg = "";
         combatEnemyLog.innerHTML = "";
         combatEnemyLog.style.opacity = "1";
         combatEnemyLog.style.transition = "opacity .5s linear";

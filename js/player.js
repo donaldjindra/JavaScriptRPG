@@ -110,16 +110,9 @@ function playerDefeat() {
     combatPlayerLog.style.opacity = "0";
     combatPlayerLog.style.transition = "opacity .5s linear";
     setTimeout(function () {
+        playerCombatMsg = "";
         combatPlayerLog.innerHTML = "";
         combatPlayerLog.style.opacity = "1";
         combatPlayerLog.style.transition = "opacity .5s linear";
     }, 1000)
-}
-
-// Trying to clear the combat-logs for both player and enemy.
-    function clearLog() {
-        playerCombatMsg = ""
-        combatPlayerLog.innerHTML = playerCombatMsg;
-        // combatEnemyLog = document.querySelector(".combat-log-enemy");
-        // combatEnemyLog.innerHTML = "";
 }
