@@ -1,3 +1,5 @@
+let score = 0;
+
 let RunGame = {
     initGame: function(classType) {
         this.createPlayer(classType);
@@ -28,7 +30,7 @@ let RunGame = {
         let selectHeader = document.querySelector("h1");
         selectHeader.style.display="none";
         let getInterface = document.querySelector(".interface");
-        getInterface.innerHTML = '<div class="avatar-wrapper"><h3>' + classType + '</h3><div class="full-avatar"><div class="full-avatar-sides full-avatar-front"><img src="img/' + classType.toLowerCase() + '.jpg" alt=" ' + classType + ' " class="img-avatar"></img></div><div class="full-avatar-sides full-avatar-back"><div class="full-avatar-back-stats"><span class="no-break">Hit Points: ' + player.hitPoints + '</span> Strength: ' + player.strength + ' Agility: ' + player.agility + ' Intelligence: ' + player.intelligence + '</div></div></div><div class="character-info"><p> Race: ' + player.race + ' </p><p>Gender: ' + player.gender + ' </p><p>Hit Points: <span class="player-hit-points">' + player.hitPoints + '</span></p><p>Strength: ' + player.strength + '</p><p>Agility: ' + player.agility + ' </p><p>Intelligence: ' + player.intelligence + '</p></div></div> ';
+        getInterface.innerHTML = '<div class="score">Current Score: '+ score +' Enemies slain</div><div class="avatar-wrapper"><h3>' + classType + '</h3><div class="full-avatar"><div class="full-avatar-sides full-avatar-front"><img src="img/' + classType.toLowerCase() + '.jpg" alt=" ' + classType + ' " class="img-avatar"></img></div><div class="full-avatar-sides full-avatar-back"><div class="full-avatar-back-stats"><span class="no-break">Hit Points: ' + player.hitPoints + '</span> Strength: ' + player.strength + ' Agility: ' + player.agility + ' Intelligence: ' + player.intelligence + '</div></div></div><div class="character-info"><p> Race: ' + player.race + ' </p><p>Gender: ' + player.gender + ' </p><p>Hit Points: <span class="player-hit-points">' + player.hitPoints + '</span></p><p>Strength: ' + player.strength + '</p><p>Agility: ' + player.agility + ' </p><p>Intelligence: ' + player.intelligence + '</p></div></div> ';
 
         RunGame.characterInfoDisappear();
 
@@ -330,6 +332,7 @@ let RunGame = {
     // This is going to be a post encounter loot reward eventually.
 
     postEnemy: function() {
+        RunGame.score();
         combatPlayerLog.style.opacity = "0";
         combatPlayerLog.style.transition = "opacity .5s linear";
         setTimeout(function () {
@@ -342,6 +345,16 @@ let RunGame = {
         getAdventures.style.opacity = "1";
         getAdventures.style.transition = "opacity .5s linear";
         getAdventures.innerHTML = '<div class="action"><p>You find at item after defeating your enemy.  You should pick it up! Would you like to pick it up?</p><button class="encounter-btn" id="encounter-btn-yes" onclick="RunGame.receiveItem()">Yes</button><button class="encounter-btn" id="encounter-btn-no" onclick="RunGame.continueGame()">No</button></div>';
+        
+    },
+
+    score: function() {
+        score = score + 1;
+        if(score === 1) {
+            document.querySelector(".score").innerHTML = "Current Score: " + score + " Enemy slain";
+        } else {
+            document.querySelector(".score").innerHTML = "Current Score: " + score + " Enemies slain";
+        }
     },
 
     receiveItem: function() {

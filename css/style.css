@@ -322,3 +322,8 @@ section {
             transform: rotateY(0);
 }
 
+.score {
+    padding: 1rem 0 0 2rem;
+
+}
+
