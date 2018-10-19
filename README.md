@@ -4,5 +4,7 @@ This is a game I started building about three weeks ago using JavaScript and som
 
 Currently I have three playable classes.  There are also three enemies, one of which is chosen at random. Right now basically the player is given a choice of attacking an enemy.  If they decline, the player is attacked anyway.  I have one full encounter done, with the code looping them back into that encounter if they survive.  I added additional code to keep the player playing until they die, as well as a scoring system.
 
-My next plans include adding some basic sound effects.  Also want to add more attack choices for the player.  Additional attacks for the enemy will follow after that.  I also want to add more stats, like armor and attack speed, modifiers for the damage, and other things.  
+My next plans include adding some basic sound effects.  Also want to add more attack choices for the player.  Additional attacks for the enemy will follow after that.  I also want to add more stats, like armor and attack speed, modifiers for the damage, and other things. Also, this has not been formatted yet to look right on mobile.  That's another thing to add to my todo list for the project.  For the time being, it's desktop/laptop only. 
+
+And finally my personal favorite thing so far on the project is the spinning character images on mouse hovers.
 
