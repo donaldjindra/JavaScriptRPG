@@ -124,6 +124,7 @@ section {
 
 .interface {
     background-color:rgba(172, 0, 230, .09);
+    position: relative;
 }
 
 .interface h3 {
@@ -324,6 +325,6 @@ section {
 
 .score {
     padding: 1rem 0 0 2rem;
-
+    position: absolute;
 }
 
