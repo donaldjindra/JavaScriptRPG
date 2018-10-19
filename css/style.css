@@ -82,15 +82,13 @@ footer {
 
 .alert {
     opacity: 0;
-    width: 118rem;
+    max-width: 118rem;
     padding: 2rem 0;
     text-align: center;
     margin: auto;
     height: auto;
     background-color: #000000;
     color: #ffffff;
-
-
 }
 
 
@@ -328,3 +326,173 @@ section {
     position: absolute;
 }
 
+/**************************************************/
+/**** Media Query ****/
+/**************************************************/
+
+@media only screen and (max-width: 767px) {
+    body {font-size: 1.3rem;}
+
+    header {margin: 1rem 0;}
+
+    hr {
+        width: 4.5rem;
+        margin: .25rem auto;
+    }   
+
+    footer {
+    height: 8rem;
+    }
+
+    section {
+    margin: .25rem;
+    }
+
+
+    .alert {
+    opacity: 0;
+    padding: 1rem 0;
+    }
+
+    .encounter-btn {
+    width: 3rem;
+    }
+
+    .encounter-btn,
+    .encounter-btn-continue {
+
+        margin: .25rem .25rem;
+        padding: .25rem;
+    }
+
+    .interface h3 {
+    padding-bottom: .25rem;
+    }
+
+    .character-info {
+    display: block;
+    text-align: center;
+    padding: .25rem 0;
+    }
+
+    .adventure-log {
+    font-size: .9rem;
+    text-align: center;
+    padding: .25rem 0;
+    height:15rem;
+}
+
+    .combat-log-player,
+    .combat-log-enemy {
+        padding: .25rem;
+    }
+
+    .combat-log-player,
+    .combat-log-enemy,
+    .enemy {
+        width: 33.33%;
+        margin: .25rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .warrior, 
+    .mage,
+    .rogue {
+        width: 33%;
+        text-align: left;
+        margin: 1rem;
+        display: block;
+        /* flex-direction: row;
+
+        justify-content: space-between; */
+    }
+
+    .warrior img,
+    .mage img,
+    .rogue img {
+        width: 10rem;
+        padding: .5rem;
+        display: block;
+        margin: auto;
+        opacity: .8;
+        border-radius: 1rem;
+    }
+
+    .warrior img:hover,
+    .mage img:hover,
+    .rogue img:hover {
+        opacity: 1;	
+        -webkit-transform: scale(1.0);	
+        -ms-transform: scale(1.0);	
+        transform: scale(1.0);
+    } 
+
+    .full-avatar {
+        width:10rem;
+        height:20.2rem;
+    }
+
+    .full-avatar-sides {
+        width:10rem;
+        height:20.2rem;
+        width:100%;
+    }
+
+    .full-avatar-front {
+        background-size: 10rem 20.2rem;
+    }
+
+    .full-avatar-back {
+        -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+    }
+
+    .full-avatar-back-stats {
+        font-size: .9rem;
+        line-height: 1rem;
+    }
+
+    .no-break {
+        white-space: nowrap;
+    }
+
+    .img-avatar {
+        max-width:10rem;
+        border-radius: 1rem; 
+    }
+
+    .full-avatar:hover .full-avatar-front {
+        -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+    }
+
+    .full-avatar:hover .full-avatar-back {
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+
+    .adventure-log {
+    font-size: 1.3rem;
+    padding: .25rem 0;
+    height:8rem;
+    }
+
+    .img-enemy-avatar {
+    width:10rem;
+    padding: 1rem;
+    }
+
+    .defeated-enemy {
+
+    font-size: 1rem;
+
+    }
+    .score {
+    padding: .25rem 0 0 1rem;
+    position: relative;
+    text-align: center;
+    }
+}
