@@ -34,11 +34,11 @@ function enemyStrike() {
 
     enemyCombatMsg = enemyCombatMsg + "The " + enemy.enemyType + " now attacks you for " + enemyAttack + " hit points of damage.<hr>";
     combatEnemyLog.innerHTML = enemyCombatMsg;
-    let newHitPoints = document.querySelector(".player-hit-points").innerHTML = player.hitPoints - enemyAttack; 
+    let newHitPoints = document.querySelector(".player-hit-points").textContent = player.hitPoints - enemyAttack; 
     player.hitPoints = newHitPoints;
     alert.style.opacity = "1";
     alert.style.transition = "opacity .5s linear";
-    alert.innerHTML = "The " + enemy.enemyType + " now attacks you for " + enemyAttack + " hit points of damage."
+    alert.textContent = "The " + enemy.enemyType + " now attacks you for " + enemyAttack + " hit points of damage."
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,9 +48,9 @@ function enemyStrike() {
 function enemyDefeat() {
     alert.style.opacity = "1";
     alert.style.transition = "opacity .5s linear";
-    alert.innerHTML = "The " + enemy.enemyType + " has died.";
+    alert.textContent = "The " + enemy.enemyType + " has died.";
     const getEnemyHitPoints = document.querySelector(".enemy-hit-points");
-    getEnemyHitPoints.innerHTML = 0;
+    getEnemyHitPoints.textContent = 0;
     getAdventures.style.opacity = "1";
     getAdventures.style.transition = "opacity .5s linear";
     getAdventures.innerHTML = '<div><p class="defeated-enemy">You have struck a killing blow and have defeated the ' + enemy.enemyType + '.</p><p>Would you like to continue with your adventure?</p><button class="encounter-btn" id="encounter-btn-yes" onclick="RunGame.postEnemy()">Yes</button></div>'
@@ -58,7 +58,7 @@ function enemyDefeat() {
     combatEnemyLog.style.transition = "opacity .5s linear";
     setTimeout(function(){
         enemyCombatMsg = "";
-        combatEnemyLog.innerHTML = "";
+        combatEnemyLog.textContent = "";
         combatEnemyLog.style.opacity = "1";
         combatEnemyLog.style.transition = "opacity .5s linear";
     }, 1000)

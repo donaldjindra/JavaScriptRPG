@@ -4,7 +4,6 @@ const getAdventures = document.querySelector(".adventure-log");
 const getCombatLog = document.querySelector(".enemy-combat");
 const getEnemy = document.querySelector(".enemy");
 const getEnemyHitPoints = document.querySelector(".enemy-hit-points");
-let getHitPoints = document.querySelector(".player-hit-points");
 const alert = document.querySelector(".alert");
 const gameScore = document.querySelector(".score");
 
@@ -45,7 +44,7 @@ let RunGame = {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Code to hide the character-info div on mouseenter when the character images spins through css animations.
+    // Hides the character-info div on mouseenter when the character image spins through css animations.
 
     characterInfoDisappear: function() {   
         const charInfo = document.querySelector(".character-info");
@@ -232,9 +231,9 @@ let RunGame = {
             } else {
                 setTimeout(function(){
                     alert.style.display="block";
-                    alert.innerHTML = "The " + enemy.enemyType + " has died.";
+                    alert.textContent = "The " + enemy.enemyType + " has died.";
     
-                    getEnemyHitPoints.innerHTML = 0;
+                    getEnemyHitPoints.textContent = 0;
                     getAdventures.innerHTML = '<div><p class="defeated-enemy">You have defeated the ' + enemy.enemyType + '.</p><p>Would you like to continue with your adventure?</p><button class="encounter-btn" id="encounter-btn-yes" onclick="continueGame">Yes</button></div>'
                 }, 1000)
             }
@@ -326,7 +325,7 @@ let RunGame = {
         combatPlayerLog.style.transition = "opacity .5s linear";
         setTimeout(function () {
             playerCombatMsg = "";
-            combatPlayerLog.innerHTML = "";
+            combatPlayerLog.textContent = "";
             combatPlayerLog.style.opacity = "1";
             combatPlayerLog.style.transition = "opacity .5s linear";
         }, 1000)
@@ -339,9 +338,9 @@ let RunGame = {
     score: function() {
         score = score + 1;
         if(score === 1) {
-            document.querySelector(".score").innerHTML = "Current Score: " + score + " Enemy slain";
+            document.querySelector(".score").textContent = "Current Score: " + score + " Enemy slain";
         } else {
-            document.querySelector(".score").innerHTML = "Current Score: " + score + " Enemies slain";
+            document.querySelector(".score").textContent = "Current Score: " + score + " Enemies slain";
         }
     },
 
@@ -364,15 +363,16 @@ let RunGame = {
     // Resets the hitpoints back to their defaults for next encounter.
 
     heal: function(){
+        const getHitPoints = document.querySelector(".player-hit-points")
         const playerClass = player.classType;
         if (playerClass == "Warrior") {
-            document.querySelector(".player-hit-points").textContent = 2500;
+            getHitPoints.textContent = 2500;
             player.hitPoints = 2500;
         } else if (playerClass == "Rogue") {
-            document.querySelector(".player-hit-points").textContent = 1750;
+            getHitPoints.textContent = 1750;
             player.hitPoints = 1750;
         } else if (playerClass == "Mage") {
-            document.querySelector(".player-hit-points").textContent = 1250
+            getHitPoints.textContent = 1250
             player.hitPoints = 1250;
         }
         
@@ -386,9 +386,9 @@ let RunGame = {
     // Clear the combat-logs for the player and enemy before each encounter.
     clearLog: function () {
         playerCombatMsg = "";
-        combatPlayerLog.innerHTML = "";
+        combatPlayerLog.textContent = "";
         enemyCombatMsg = "";
-        combatEnemyLog.innerHTML = "";
+        combatEnemyLog.textContent = "";
     },
 } 
 

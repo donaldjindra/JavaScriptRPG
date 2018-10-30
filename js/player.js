@@ -73,12 +73,12 @@ function combatMessage(attackName, attack) {
 
     playerCombatMsg = playerCombatMsg + "You have attacked the " + enemy.enemyType + " with " + attackName + " for " + attack + " hit points of damage.<hr>";
     combatPlayerLog.innerHTML = playerCombatMsg;
-    const newEnemyHP =  document.querySelector(".enemy-hit-points").innerHTML = enemy.hitPoints - attack;
+    const newEnemyHP =  document.querySelector(".enemy-hit-points").textContent = enemy.hitPoints - attack;
     enemy.hitPoints = newEnemyHP;
     alert.style.display = "block";
     alert.style.opacity="1";
     alert.style.transition = "opacity .5s linear";
-    document.querySelector(".alert").innerHTML = "You have attacked the " + enemy.enemyType + " with " + attackName + " for " + attack + " hit points of damage."
+    document.querySelector(".alert").textContent = "You have attacked the " + enemy.enemyType + " with " + attackName + " for " + attack + " hit points of damage."
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -98,7 +98,7 @@ function attackBack() {
 function playerDefeat() {
     alert.style.opacity = "1";
     alert.style.transition = "opacity .5s linear";
-    alert.innerHTML = "You have been defeated";
+    alert.textContent = "You have been defeated";
     getAdventures.style.opacity = "1";
     getAdventures.style.transition = "opacity .5s linear";
     document.querySelector(".player-hit-points").innerHTML = 0;
@@ -107,7 +107,7 @@ function playerDefeat() {
     combatPlayerLog.style.transition = "opacity .5s linear";
     setTimeout(function () {
         playerCombatMsg = "";
-        combatPlayerLog.innerHTML = "";
+        combatPlayerLog.textContent = "";
         combatPlayerLog.style.opacity = "1";
         combatPlayerLog.style.transition = "opacity .5s linear";
     }, 1000)
