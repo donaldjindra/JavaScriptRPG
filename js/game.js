@@ -337,10 +337,11 @@ let RunGame = {
 
     score: function() {
         score = score + 1;
+        const gameScore = document.querySelector(".score");
         if(score === 1) {
-            document.querySelector(".score").textContent = "Current Score: " + score + " Enemy slain";
+            gameScore.textContent = "Current Score: " + score + " Enemy slain";
         } else {
-            document.querySelector(".score").textContent = "Current Score: " + score + " Enemies slain";
+            gameScore.textContent = "Current Score: " + score + " Enemies slain";
         }
     },
 
