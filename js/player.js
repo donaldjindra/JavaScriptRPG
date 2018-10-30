@@ -42,21 +42,21 @@ let playerMoves = {
 //Functions used in the actual combat.  Generates the attack message too.
 
 function warriorFight() {
-    let warriorSwingSword = playerMoves.warriorSwordSwing();
+    const warriorSwingSword = playerMoves.warriorSwordSwing();
     let attackName = "Swing Sword"
     combatMessage(attackName, warriorSwingSword)
 }
 
 
 function mageFight() {
-    let mageCastFireball = playerMoves.mageCastFireball();
+    const mageCastFireball = playerMoves.mageCastFireball();
     let attackName = "Cast Fireball"
     combatMessage(attackName, mageCastFireball)
 }
 
 
 function rogueFight() {
-    let rogueStab = playerMoves.rogueStab();
+    const rogueStab = playerMoves.rogueStab();
     let attackName = "Stab"
     combatMessage(attackName, rogueStab)
 }
@@ -73,9 +73,8 @@ function combatMessage(attackName, attack) {
 
     playerCombatMsg = playerCombatMsg + "You have attacked the " + enemy.enemyType + " with " + attackName + " for " + attack + " hit points of damage.<hr>";
     combatPlayerLog.innerHTML = playerCombatMsg;
-    let newEnemyHP =  document.querySelector(".enemy-hit-points").innerHTML = enemy.hitPoints - attack;
+    const newEnemyHP =  document.querySelector(".enemy-hit-points").innerHTML = enemy.hitPoints - attack;
     enemy.hitPoints = newEnemyHP;
-    let alert = document.querySelector(".alert")
     alert.style.display = "block";
     alert.style.opacity="1";
     alert.style.transition = "opacity .5s linear";
@@ -87,7 +86,6 @@ function combatMessage(attackName, attack) {
 // Attack Back Button.
 
 function attackBack() {
-    getAdventures = document.querySelector(".adventure-log");
     getAdventures.style.opacity = "1";
     getAdventures.style.transition = "opacity .5s linear";
     getAdventures.innerHTML = '<div><p>Attack Back?</p><button class="encounter-btn" id="encounter-btn-yes" onclick="RunGame.secondAttack()">Yes</button></div>'
@@ -98,13 +96,12 @@ function attackBack() {
 // Defeated Player. 
 
 function playerDefeat() {
-    let alert = document.querySelector(".alert")
     alert.style.opacity = "1";
     alert.style.transition = "opacity .5s linear";
     document.querySelector(".alert").innerHTML = "You have been defeated";
     getAdventures.style.opacity = "1";
     getAdventures.style.transition = "opacity .5s linear";
-    let getHitPoints = document.querySelector(".player-hit-points");
+    const getHitPoints = document.querySelector(".player-hit-points");
     getHitPoints.innerHTML = 0;
     getAdventures.innerHTML = '<div class="action"><p><span class="defeated-enemy">You have died.</span><br> Please refresh the browser to continue.</div>';
     combatPlayerLog.style.opacity = "0";

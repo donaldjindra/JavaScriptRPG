@@ -30,13 +30,12 @@ const combatEnemyLog = document.querySelector(".combat-log-enemy");
 let enemyCombatMsg = "";
 
 function enemyStrike() { 
-    let enemyAttack = enemyMoves.attack();
+    const enemyAttack = enemyMoves.attack();
 
     enemyCombatMsg = enemyCombatMsg + "The " + enemy.enemyType + " now attacks you for " + enemyAttack + " hit points of damage.<hr>";
     combatEnemyLog.innerHTML = enemyCombatMsg;
     let newHitPoints = document.querySelector(".player-hit-points").innerHTML = player.hitPoints - enemyAttack; 
     player.hitPoints = newHitPoints;
-    let alert = document.querySelector(".alert")
     alert.style.opacity = "1";
     alert.style.transition = "opacity .5s linear";
     alert.innerHTML = "The " + enemy.enemyType + " now attacks you for " + enemyAttack + " hit points of damage."
@@ -47,11 +46,10 @@ function enemyStrike() {
 // Defeated Enemy. 
 
 function enemyDefeat() {
-    let alert = document.querySelector(".alert")
     alert.style.opacity = "1";
     alert.style.transition = "opacity .5s linear";
-    document.querySelector(".alert").innerHTML = "The " + enemy.enemyType + " has died.";
-    let getEnemyHitPoints = document.querySelector(".enemy-hit-points");
+    alert.innerHTML = "The " + enemy.enemyType + " has died.";
+    const getEnemyHitPoints = document.querySelector(".enemy-hit-points");
     getEnemyHitPoints.innerHTML = 0;
     getAdventures.style.opacity = "1";
     getAdventures.style.transition = "opacity .5s linear";
