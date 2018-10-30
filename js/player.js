@@ -98,11 +98,10 @@ function attackBack() {
 function playerDefeat() {
     alert.style.opacity = "1";
     alert.style.transition = "opacity .5s linear";
-    document.querySelector(".alert").innerHTML = "You have been defeated";
+    alert.innerHTML = "You have been defeated";
     getAdventures.style.opacity = "1";
     getAdventures.style.transition = "opacity .5s linear";
-    const getHitPoints = document.querySelector(".player-hit-points");
-    getHitPoints.innerHTML = 0;
+    document.querySelector(".player-hit-points").innerHTML = 0;
     getAdventures.innerHTML = '<div class="action"><p><span class="defeated-enemy">You have died.</span><br> Please refresh the browser to continue.</div>';
     combatPlayerLog.style.opacity = "0";
     combatPlayerLog.style.transition = "opacity .5s linear";

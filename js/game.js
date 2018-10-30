@@ -2,7 +2,11 @@ let score = 0;
 
 const getAdventures = document.querySelector(".adventure-log");
 const getCombatLog = document.querySelector(".enemy-combat");
+const getEnemy = document.querySelector(".enemy");
+const getEnemyHitPoints = document.querySelector(".enemy-hit-points");
+let getHitPoints = document.querySelector(".player-hit-points");
 const alert = document.querySelector(".alert");
+const gameScore = document.querySelector(".score");
 
 let RunGame = {
     initGame: function(classType) {
@@ -164,7 +168,6 @@ let RunGame = {
         getAdventures.style.transition = "opacity .5s linear";
         getAdventures.innerHTML = '<div><p>The ' + enemy.enemyType + ' attacks you instead, prepare for damage.</p></div>'
 
-        const getEnemy = document.querySelector(".enemy");
         getEnemy.style.display="flex";
         getEnemy.innerHTML = '<h3>' + enemy.enemyType + '</h3><p> Hit Points Remaining: <span class="enemy-hit-points">'  + enemy.hitPoints  + ' </span></p><img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" alt=" ' + enemy.enemyType + ' " class="img-enemy-avatar"> ';
 
@@ -199,13 +202,11 @@ let RunGame = {
     enemyFight: function() {
         getAdventures.style.opacity = "0";
         getAdventures.style.transition = "opacity .5s linear";
-
         getCombatLog.style.display="flex";
 
         RunGame.createEnemy();
         RunGame.clearLog();
 
-        const getEnemy = document.querySelector(".enemy");
         getEnemy.style.display="flex";
         getEnemy.innerHTML = '<h3>' + enemy.enemyType + '</h3><p> Hit Points Remaining: <span class="enemy-hit-points">'  + enemy.hitPoints  + ' </span></p><img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" alt=" ' + enemy.enemyType + ' " class="img-enemy-avatar"> ';
 
@@ -231,9 +232,8 @@ let RunGame = {
             } else {
                 setTimeout(function(){
                     alert.style.display="block";
-                    document.querySelector(".alert").innerHTML = "The " + enemy.enemyType + " has died.";
+                    alert.innerHTML = "The " + enemy.enemyType + " has died.";
     
-                    const getEnemyHitPoints = document.querySelector(".enemy-hit-points");
                     getEnemyHitPoints.innerHTML = 0;
                     getAdventures.innerHTML = '<div><p class="defeated-enemy">You have defeated the ' + enemy.enemyType + '.</p><p>Would you like to continue with your adventure?</p><button class="encounter-btn" id="encounter-btn-yes" onclick="continueGame">Yes</button></div>'
                 }, 1000)
@@ -260,7 +260,6 @@ let RunGame = {
 
     secondAttack: function(){
 
-        const getEnemy = document.querySelector(".enemy");
         getEnemy.style.display="flex";
         getEnemy.innerHTML = '<h3>' + enemy.enemyType + '</h3><p> Hit Points Remaining: <span class="enemy-hit-points">' + enemy.hitPoints  + ' </p><img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" alt=" ' + enemy.enemyType + ' " class="img-enemy-avatar"> '; 
 
@@ -367,13 +366,13 @@ let RunGame = {
     heal: function(){
         const playerClass = player.classType;
         if (playerClass == "Warrior") {
-            document.querySelector(".player-hit-points").innerHTML = 2500;
+            document.querySelector(".player-hit-points").textContent = 2500;
             player.hitPoints = 2500;
         } else if (playerClass == "Rogue") {
-            document.querySelector(".player-hit-points").innerHTML = 1750;
+            document.querySelector(".player-hit-points").textContent = 1750;
             player.hitPoints = 1750;
         } else if (playerClass == "Mage") {
-            document.querySelector(".player-hit-points").innerHTML = 1250
+            document.querySelector(".player-hit-points").textContent = 1250
             player.hitPoints = 1250;
         }
         
